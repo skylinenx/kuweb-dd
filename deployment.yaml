@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuweb-dd
+spec:
+  selector:
+    matchLabels:
+      app: kuweb-dd
+  template:
+    metadata:
+      labels:
+        app: kuweb-dd
+    spec:
+      containers:
+      - name: kuweb-dd
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: <Port>
